@@ -7,3 +7,12 @@ C:\Users\IJMAIL\git\CShap\BaKasMacro\BaKasMacro\obj\Debug\BaKasMacro.pdb
 C:\Users\IJMAIL\git\CShap\BaKasMacro\BaKasMacro\obj\Debug\BaKasMacro.Login.resources
 C:\Users\IJMAIL\git\CShap\BaKasMacro\BaKasMacro\obj\Debug\BaKasMacro.csproj.GenerateResource.Cache
 C:\Users\IJMAIL\git\Cshap\BaKasMacro\BaKasMacro\obj\Debug\BaKasMacro.MainForm.resources
+C:\Users\insan\git\Cshap\BaKasMacro\BaKasMacro\obj\Debug\BaKasMacro.csprojResolveAssemblyReference.cache
+C:\Users\insan\git\Cshap\BaKasMacro\BaKasMacro\obj\Debug\BaKasMacro.Login.resources
+C:\Users\insan\git\Cshap\BaKasMacro\BaKasMacro\obj\Debug\BaKasMacro.MainForm.resources
+C:\Users\insan\git\Cshap\BaKasMacro\BaKasMacro\obj\Debug\BaKasMacro.csproj.GenerateResource.Cache
+C:\Users\insan\git\Cshap\BaKasMacro\BaKasMacro\obj\Debug\BaKasMacro.exe
+C:\Users\insan\git\Cshap\BaKasMacro\BaKasMacro\obj\Debug\BaKasMacro.pdb
+C:\Users\insan\git\Cshap\BaKasMacro\BaKasMacro\bin\Debug\BaKasMacro.exe.config
+C:\Users\insan\git\Cshap\BaKasMacro\BaKasMacro\bin\Debug\BaKasMacro.exe
+C:\Users\insan\git\Cshap\BaKasMacro\BaKasMacro\bin\Debug\BaKasMacro.pdb

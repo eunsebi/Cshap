@@ -8,6 +8,7 @@
  */
 using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace BaKasMacro
@@ -28,5 +29,145 @@ namespace BaKasMacro
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
-	}
+		
+		// 마우스 클릭
+		public void mmClick(int x, int y)
+        {
+            lock (process)
+            {
+                process.Start();
+
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 1 330 1" + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 3 58 1" + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 3 53 " + x + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 3 54 " + y + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 0 2 0" + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 0 0 0" + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 1 330 0" + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 3 58 0" + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 3 53 " + x + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 3 54 " + y + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 0 2 0" + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 0 0 0" + Environment.NewLine);
+                process.StandardInput.Close();
+
+                process.WaitForExit();
+                process.Close();
+            }
+        }
+
+		// 에뮬에 드레그 메서드
+		public void mmDrag(int x, int y, int x2, int y2)
+        {
+            lock (process)
+            {
+                process.Start();
+
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 1 330 1" + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 3 58 1" + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 3 53 " + x + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 3 54 " + y + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 0 2 0" + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 0 0 0" + Environment.NewLine);
+
+                int turm = (y - y2) / 5;
+
+                for (int i = 0; i < 5; i++)
+                {
+                    y = y - turm;
+                    Thread.Sleep(100);
+                    process.StandardInput.Write("adb shell sendevent /dev/input/event7 3 53 " + x + Environment.NewLine);
+                    process.StandardInput.Write("adb shell sendevent /dev/input/event7 3 54 " + y + Environment.NewLine);
+
+                    process.StandardInput.Write("adb shell sendevent /dev/input/event7 0 2 0" + Environment.NewLine);
+                    process.StandardInput.Write("adb shell sendevent /dev/input/event7 0 0 0" + Environment.NewLine);
+                }
+                Thread.Sleep(100);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 1 330 0" + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 3 58 0" + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 3 53 " + x + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 3 54 " + y2 + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 0 2 0" + Environment.NewLine);
+                process.StandardInput.Write("adb shell sendevent /dev/input/event7 0 0 0" + Environment.NewLine);
+
+                process.StandardInput.Close();
+
+                process.WaitForExit(5000);
+                process.Close();
+            }
+        }
+
+		// 에뮬 캡쳐 메서드
+		//꼭 파일스트림을 이용해 읽기 전용으로 가져올것...
+		//에뮬과 같이 쓰기때문에 읽기전용으로 해야한다.
+
+		public Bitmap mmCapture(int x, int y, int w, int h)
+        {
+            lock (process)
+            {
+                process.Start();
+
+                Console.WriteLine("1. " + DateTime.Now.ToString("HH:mm:ss.fff"));
+                process.StandardInput.Write("adb shell screencap -p /sdcard/download/cap.png" + Environment.NewLine);
+                Console.WriteLine("2. " + DateTime.Now.ToString("HH:mm:ss.fff"));
+                System.Threading.Thread.Sleep(1000);
+                process.StandardInput.Write("adb pull /sdcard/download/cap.png" + Environment.NewLine);
+                Console.WriteLine("3. " + DateTime.Now.ToString("HH:mm:ss.fff"));
+                process.StandardInput.Write("adb shell rm /sdcard/download/cap.png" + x + Environment.NewLine);
+                Console.WriteLine("4. " + DateTime.Now.ToString("HH:mm:ss.fff"));
+                process.StandardInput.Close();
+                Console.WriteLine("5. " + DateTime.Now.ToString("HH:mm:ss.fff"));
+                process.WaitForExit();
+                
+                Console.WriteLine("6. " + DateTime.Now.ToString("HH:mm:ss.fff"));
+                process.Close();
+
+                FileStream stream = new FileStream(mWorkingDir + "\\cap.png", FileMode.Open);
+
+                Bitmap bm = new Bitmap(stream);
+
+                stream.Close();
+
+                Rectangle recSource = new Rectangle(x, y, w, h);
+
+                Bitmap bmpCropped = new Bitmap(w, h);
+
+                Graphics grBitmap = Graphics.FromImage(bmpCropped);
+
+                grBitmap.DrawImage(bm, 0, 0, recSource, GraphicsUnit.Pixel);
+
+                return bmpCropped;
+            }
+        }
+		
+		public void mmConnect(string ip)
+        {
+            lock (process)
+            {
+                process.Start();
+
+                process.StandardInput.Write("adb connect " + ip + Environment.NewLine);
+                process.StandardInput.Close();
+
+                process.WaitForExit();
+                process.Close();
+            }
+        }
+
+        public void mmDisconnect(string ip)
+        {
+            lock (process)
+            {
+                process.Start();
+                                
+                process.StandardInput.Write("adb disconnect " + ip + Environment.NewLine);
+                process.StandardInput.Close();
+
+                process.WaitForExit();
+                process.Close();
+            }
+        }
+
+
+	}	// MainForm Class End
 }
