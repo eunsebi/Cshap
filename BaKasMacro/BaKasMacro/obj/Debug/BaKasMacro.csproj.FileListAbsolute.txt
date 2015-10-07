@@ -1,0 +1,8 @@
+C:\Users\IJMAIL\git\CShap\BaKasMacro\BaKasMacro\bin\Debug\BaKasMacro.exe.config
+C:\Users\IJMAIL\git\CShap\BaKasMacro\BaKasMacro\bin\Debug\BaKasMacro.exe
+C:\Users\IJMAIL\git\CShap\BaKasMacro\BaKasMacro\bin\Debug\BaKasMacro.pdb
+C:\Users\IJMAIL\git\CShap\BaKasMacro\BaKasMacro\obj\Debug\BaKasMacro.csprojResolveAssemblyReference.cache
+C:\Users\IJMAIL\git\CShap\BaKasMacro\BaKasMacro\obj\Debug\BaKasMacro.exe
+C:\Users\IJMAIL\git\CShap\BaKasMacro\BaKasMacro\obj\Debug\BaKasMacro.pdb
+C:\Users\IJMAIL\git\CShap\BaKasMacro\BaKasMacro\obj\Debug\BaKasMacro.Login.resources
+C:\Users\IJMAIL\git\CShap\BaKasMacro\BaKasMacro\obj\Debug\BaKasMacro.csproj.GenerateResource.Cache
