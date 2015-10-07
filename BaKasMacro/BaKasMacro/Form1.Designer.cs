@@ -8,7 +8,7 @@
  */
 namespace BaKasMacro
 {
-	partial class MainForm
+	partial class Form1
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -37,6 +37,9 @@ namespace BaKasMacro
 		private System.Windows.Forms.TabPage tabPage7;
 		private System.Windows.Forms.TabPage tabPage8;
 		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel panel4;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -82,11 +85,16 @@ namespace BaKasMacro
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.panel4 = new System.Windows.Forms.Panel();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.tabControl2.SuspendLayout();
 			this.tabPage5.SuspendLayout();
+			this.tabPage6.SuspendLayout();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -277,6 +285,9 @@ namespace BaKasMacro
 			// 
 			// tabPage6
 			// 
+			this.tabPage6.Controls.Add(this.panel3);
+			this.tabPage6.Controls.Add(this.panel4);
+			this.tabPage6.Controls.Add(this.panel2);
 			this.tabPage6.Location = new System.Drawing.Point(4, 22);
 			this.tabPage6.Name = "tabPage6";
 			this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -330,6 +341,30 @@ namespace BaKasMacro
 			this.tabPage4.Text = "기 타";
 			this.tabPage4.UseVisualStyleBackColor = true;
 			// 
+			// panel2
+			// 
+			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel2.Location = new System.Drawing.Point(0, 2);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(126, 227);
+			this.panel2.TabIndex = 0;
+			// 
+			// panel3
+			// 
+			this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel3.Location = new System.Drawing.Point(531, 11);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(126, 227);
+			this.panel3.TabIndex = 1;
+			// 
+			// panel4
+			// 
+			this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panel4.Location = new System.Drawing.Point(373, 7);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(126, 227);
+			this.panel4.TabIndex = 2;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -337,7 +372,7 @@ namespace BaKasMacro
 			this.BackColor = System.Drawing.SystemColors.Control;
 			this.ClientSize = new System.Drawing.Size(984, 362);
 			this.Controls.Add(this.tabControl1);
-			this.Name = "MainForm";
+			this.Name = "Form1";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "BaKasMacro";
 			this.tabControl1.ResumeLayout(false);
@@ -346,8 +381,9 @@ namespace BaKasMacro
 			this.tabPage2.ResumeLayout(false);
 			this.tabControl2.ResumeLayout(false);
 			this.tabPage5.ResumeLayout(false);
+			this.tabPage6.ResumeLayout(false);
+			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
-
 		}
 	}
 }
