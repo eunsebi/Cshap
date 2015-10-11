@@ -1,0 +1,6 @@
+C:\Users\IJMAIL\git\Cshap\BaKasMacro\test\bin\Debug\test.exe.config
+C:\Users\IJMAIL\git\Cshap\BaKasMacro\test\bin\Debug\test.exe
+C:\Users\IJMAIL\git\Cshap\BaKasMacro\test\bin\Debug\test.pdb
+C:\Users\IJMAIL\git\Cshap\BaKasMacro\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+C:\Users\IJMAIL\git\Cshap\BaKasMacro\test\obj\Debug\test.exe
+C:\Users\IJMAIL\git\Cshap\BaKasMacro\test\obj\Debug\test.pdb

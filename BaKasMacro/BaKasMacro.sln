@@ -4,6 +4,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # SharpDevelop 5.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaKasMacro", "BaKasMacro\BaKasMacro.csproj", "{6C8B0001-7DF0-4F92-9A5C-685741FF02C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{D6DF92EE-5111-4AC6-AF02-4E9795C17489}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,5 +16,9 @@ Global
 		{6C8B0001-7DF0-4F92-9A5C-685741FF02C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C8B0001-7DF0-4F92-9A5C-685741FF02C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C8B0001-7DF0-4F92-9A5C-685741FF02C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6DF92EE-5111-4AC6-AF02-4E9795C17489}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6DF92EE-5111-4AC6-AF02-4E9795C17489}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6DF92EE-5111-4AC6-AF02-4E9795C17489}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6DF92EE-5111-4AC6-AF02-4E9795C17489}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

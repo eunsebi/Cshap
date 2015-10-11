@@ -10,6 +10,8 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.Windows.Forms.VisualStyles;
 
 namespace BaKasMacro
 {
@@ -18,6 +20,44 @@ namespace BaKasMacro
 	/// </summary>
 	public partial class MainForm : Form
 	{
+		void Button1Click(object sender, EventArgs e)
+		{
+			Process myProcess = new Process();
+				
+			ProcessStartInfo myProcessStartInfo = new ProcessStartInfo(@"C:\Users\IJMAIL\AppData\Roaming\Nox\bin\nox_adb.exe" );
+			myProcessStartInfo.Arguments = "devices";
+			myProcessStartInfo.UseShellExecute = false;
+			myProcessStartInfo.RedirectStandardOutput = true;		// 데이터 받기
+			myProcessStartInfo.RedirectStandardError = true;		// 오류내용 받기
+			myProcessStartInfo.CreateNoWindow = true;				// 원도우창 띄우기(true 띄우지 않기, false 띄우기)
+			myProcess.StartInfo = myProcessStartInfo;
+			myProcess.Start();
+			myProcess.WaitForExit();
+			
+			//string output = myProcess.StandardOutput.ReadToEnd();
+			string output = myProcess.StandardOutput.ReadToEnd();
+			string error = myProcess.StandardError.ReadToEnd();
+			string[] aa = output.Split('\n');
+			
+			for(int i=1; i<aa.Length; i++) {
+				listBox1.Items.Add(aa[i]);
+			}
+			
+			//listBox1.Items.Add(aa.Length);
+			    
+			//listBox1.Items.Add(aa[1]);
+			
+			//listBox1.Text = output;
+
+
+            // 프로그램이 종료되면
+            //System.Console.WriteLine( "ExitCode is " + myProcess.ExitCode );
+            myProcess.WaitForExit();
+            myProcess.Close();
+			
+		}
+		
+		
 		public MainForm()
 		{
 			//
@@ -29,7 +69,16 @@ namespace BaKasMacro
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
+		void ListBox1SelectedValueChanged(object sender, EventArgs e)
+		{
+			ListBox IbEvent = sender as ListBox;
+			string aa = IbEvent.SelectedItem.ToString();
+			
+			textBox1.Text = aa;
+		}
+
 		
+		/*
 		// 마우스 클릭
 		public void mmClick(int x, int y)
         {
@@ -167,7 +216,7 @@ namespace BaKasMacro
                 process.Close();
             }
         }
-
-
+		*/
+		
 	}	// MainForm Class End
 }

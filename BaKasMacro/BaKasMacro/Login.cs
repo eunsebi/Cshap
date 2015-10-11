@@ -34,7 +34,7 @@ namespace BaKasMacro
 		private Boolean _pwCheckd = false;
 		private Boolean _pwLenCheckd = false;
 		MySqlConnection _MConn;
-		public string _strSql = "Data Source=localhost;Database=bakas;User Id=root;Password=;Charset=utf8"; 
+		public string _strSql = "Data Source=197.200.32.79;Database=bakas;User Id=root;Password=1234;Charset=utf8"; 
 
 		void OpenMysql()
 		{

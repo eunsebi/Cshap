@@ -22,13 +22,11 @@ namespace BaKasMacro
 		private System.Windows.Forms.Button button5;
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.ListBox listBox2;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.ListBox listBox1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TabControl tabControl2;
 		private System.Windows.Forms.TabPage tabPage5;
@@ -37,6 +35,7 @@ namespace BaKasMacro
 		private System.Windows.Forms.TabPage tabPage7;
 		private System.Windows.Forms.TabPage tabPage8;
 		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.ListBox listBox1;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -61,16 +60,15 @@ namespace BaKasMacro
 		{
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.button5 = new System.Windows.Forms.Button();
 			this.button4 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
 			this.button1 = new System.Windows.Forms.Button();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.listBox2 = new System.Windows.Forms.ListBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -104,16 +102,15 @@ namespace BaKasMacro
 			// tabPage1
 			// 
 			this.tabPage1.BackColor = System.Drawing.Color.Black;
+			this.tabPage1.Controls.Add(this.listBox1);
 			this.tabPage1.Controls.Add(this.button5);
 			this.tabPage1.Controls.Add(this.button4);
 			this.tabPage1.Controls.Add(this.button3);
-			this.tabPage1.Controls.Add(this.button2);
 			this.tabPage1.Controls.Add(this.button1);
 			this.tabPage1.Controls.Add(this.textBox1);
 			this.tabPage1.Controls.Add(this.label3);
 			this.tabPage1.Controls.Add(this.listBox2);
 			this.tabPage1.Controls.Add(this.label2);
-			this.tabPage1.Controls.Add(this.listBox1);
 			this.tabPage1.Controls.Add(this.label1);
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
@@ -121,6 +118,16 @@ namespace BaKasMacro
 			this.tabPage1.Size = new System.Drawing.Size(964, 259);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "디바이스 선택";
+			// 
+			// listBox1
+			// 
+			this.listBox1.FormattingEnabled = true;
+			this.listBox1.ItemHeight = 12;
+			this.listBox1.Location = new System.Drawing.Point(12, 24);
+			this.listBox1.Name = "listBox1";
+			this.listBox1.Size = new System.Drawing.Size(640, 160);
+			this.listBox1.TabIndex = 11;
+			this.listBox1.SelectedValueChanged += new System.EventHandler(this.ListBox1SelectedValueChanged);
 			// 
 			// button5
 			// 
@@ -149,23 +156,15 @@ namespace BaKasMacro
 			this.button3.Text = "검 색";
 			this.button3.UseVisualStyleBackColor = true;
 			// 
-			// button2
-			// 
-			this.button2.Location = new System.Drawing.Point(511, 194);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(143, 31);
-			this.button2.TabIndex = 7;
-			this.button2.Text = "선 택";
-			this.button2.UseVisualStyleBackColor = true;
-			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(368, 194);
+			this.button1.Location = new System.Drawing.Point(509, 194);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(143, 31);
 			this.button1.TabIndex = 6;
 			this.button1.Text = "검 색";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.Button1Click);
 			// 
 			// textBox1
 			// 
@@ -202,15 +201,6 @@ namespace BaKasMacro
 			this.label2.TabIndex = 2;
 			this.label2.Text = "원드/블택 목록";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// listBox1
-			// 
-			this.listBox1.FormattingEnabled = true;
-			this.listBox1.ItemHeight = 12;
-			this.listBox1.Location = new System.Drawing.Point(5, 24);
-			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(650, 160);
-			this.listBox1.TabIndex = 1;
 			// 
 			// label1
 			// 

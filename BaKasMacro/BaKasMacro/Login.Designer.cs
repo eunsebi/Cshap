@@ -33,7 +33,7 @@ namespace BaKasMacro
 		private System.Windows.Forms.TextBox txtId;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.CheckBox checkBox1;
-		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button connBtn;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -74,7 +74,7 @@ namespace BaKasMacro
 			this.txtId = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			this.button3 = new System.Windows.Forms.Button();
+			this.connBtn = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -252,22 +252,22 @@ namespace BaKasMacro
 			this.checkBox1.UseVisualStyleBackColor = true;
 			this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1CheckedChanged);
 			// 
-			// button3
+			// connBtn
 			// 
-			this.button3.Location = new System.Drawing.Point(210, 110);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(62, 18);
-			this.button3.TabIndex = 19;
-			this.button3.Text = "conn";
-			this.button3.UseVisualStyleBackColor = true;
-			this.button3.Click += new System.EventHandler(this.Button3Click);
+			/* this.connBtn.Location = new System.Drawing.Point(210, 110);
+			this.connBtn.Name = "connBtn";
+			this.connBtn.Size = new System.Drawing.Size(62, 18);
+			this.connBtn.TabIndex = 19;
+			this.connBtn.Text = "conn";
+			this.connBtn.UseVisualStyleBackColor = true;
+			this.connBtn.Click += new System.EventHandler(this.Button3Click); */
 			// 
 			// Login
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(281, 266);
-			this.Controls.Add(this.button3);
+			//this.Controls.Add(this.connBtn);
 			this.Controls.Add(this.checkBox1);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.label3);
